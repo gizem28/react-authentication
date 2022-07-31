@@ -3,9 +3,9 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { useToken } from '../auth/useToken';
 
-
 export const SignUpPage = () => {
     const [token, setToken] = useToken();
+
     const [errorMessage, setErrorMessage] = useState('');
 
     const [emailValue, setEmailValue] = useState('');
@@ -21,7 +21,7 @@ export const SignUpPage = () => {
         });
         const { token } = response.data;
         setToken(token);
-        history.push('/');
+        history.push('/please-verify');
     }
 
     return (
